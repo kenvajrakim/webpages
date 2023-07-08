@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title> TEST WEBPAGE FOR VISITOR WEBSITE USING JAVA SCRIPT</title>
+       
+    </head>
+    <body>
+        <div class="container" >
+            <form >
+                <h3> VISITOR ENQUIRY FORM</h3>
+                <p> Full name: <input type="text" id="name" placeholder="your full Name" required></p>
+                <p> Email: <input type="email" id="Email" placeholder="your email" required></p>
+                <p> Location: <select name="location" id="location">
+                    <option value="---select your location---">--- select your location---</option>
+                    <option value="Kualar">Kualar</option>
+                    <option value="Johor">Johor</option>
+                    <option value="Kedah">Kedah</option>
+                    <option value="Kelantan">Kelantan</option>
+                    <option value="Melaka">Melaka</option>
+                    <option value="Negeri Sembilan">Negeri Sembilan</option>
+                    </select>  </p>
+                <p> Please Write Your Enquiry: <input type="text" id="message" rows="4" placeholder="Type your enquiries here ...." required></textarea> </p>
+                <button type="submit" >Submit</button> <input type="button"
+                value="cancel"
+                onclick="document.getElementById('message').value = '',document.getElementById('name').value = '',document.getElementById('Email').value = '' ,document.getElementById('phone').value = '',document.getElementById('location').value= '---select your location---',document.getElementById('gendermale').checked= '',document.getElementById('genderfemale').checked= ''"/> 
+            </form>
+</div>
+    </body>
+    </html>
+    
