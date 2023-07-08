@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0">
+        <title> TEST WEBPAGE FOR VISITOR WEBSITE USING JAVA SCRIPT</title>
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <form onsubmit="sendEmail(); reset() ; return false">
+                <h3> VISITOR ENQUIRY FORM</h3>
+                <p> name: <input type="text" id="name" placeholder="your full Name" required></p>
+                <p> email: <input type="email" id="Email" placeholder="your email" required></p>
+                <p> phone: <input type="text" id="phone" placeholder="your phone number" required></p>
+                <p> Male: <input type="checkbox" id="gender" >  Female: <input type="checkbox" id="gender" > </p>
+                <p> enquiry: <input type="text" id="message" rows="4" placeholder="Type your enquiries here ...." required></textarea> </p>
+                <button type="submit" >Submit</button>
+            </form>
+        </div>
+        <script src="https://smtpjs.com/v3/smtp.js">
+        </script>
+        <script>
+            function sendEmail(){
+                Email.send({
+                   
+                    To: "21centurydataanalyst@gmail.com",
+                    From: document.getElementById("Email").value,
+                    Subject: document.getElementById("name").value,
+                    Body:"Name:" + document.getElementById("name").value 
+                    + " <br> Email:" + document.getElementById("Email").value 
+                    + " <br> message:" + document.getElementById("message").value
+
+                }).then(
+                    message => alert("Enquiry sent successfully")
+            
+                );
+            }     
+        </script>
+
+</body>
+</html>
