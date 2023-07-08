@@ -1,18 +1,40 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta name="viewport" content="width=device-width,initial-scale=1.0">
-        <title> TEST WEBPAGE FOR VISITOR WEBSITE USING JAVA SCRIPT</title>
-       
+    
     </head>
     <body>
-        <div class="container" >
+        <script>
+            function submitfunc()
+            {
+            var getfullname= document.getElementById("name");
+            var getemail= document.getElementById("email");
+            var getmale=document.getElementById("gendermale");
+            var getfemale=document.getElementById("genderfemale");
+            var getlocation=document.getElementById("location");
+            var getenquiry=document.getElementById("message");
+            
+            if(getfullname.value=="" || getemail.value=="" || (getmale.checked==false && getfemale.checked==false) || getlocation.selectedIndex=="0" || getenquiry.value=="")
+            {
+            alert("PLEASE ENTER THE VALUES!");
+            }
+            else
+            {
+            var getsubmitdiv=document.getElementById("submitdiv");
+            getsubmitdiv.innerHTML="<strong>Congratulations..!!!</strong><br/><strong>Your Name:  </strong>"+getfullname.value+"<br/><strong>Your Email: </strong>"+getemail.value+"<br/><strong>You are from:</strong> "+getlocation.value+"<br/><strong>Your Detail Enquiry: </strong>"+getenquiry.value;
+            document.getElementById("formdiv").style.display="none";
+            }
+            }
+        </script>
+        <div id="formdiv">
+        
             <form >
                 <h3> VISITOR ENQUIRY FORM</h3>
-                <p> Full name: <input type="text" id="name" placeholder="your full Name" required></p>
-                <p> Email: <input type="email" id="Email" placeholder="your email" required></p>
-                <p> Location: <select name="location" id="location">
-                    <option value="---select your location---">--- select your location---</option>
+                <p> Full name: <input type="text" id="name" placeholder="your full name" required></p>
+                <p> Email: <input type="email" id="email" placeholder="youremail@gmail.com" required></p>
+                <p> Gender: <input type="radio" id="gendermale" name="gender" value="male "autocomplete='off'><label for="male"> Male :</label>  <input type="radio" id="genderfemale" name="gender" value="female"autocomplete='off'> <label for="female"> Female :</label><br> </p>
+                <p> Location: <select name="locations" id="location">
+                    <option value="---select your location---">--- Select Your Location---</option>
                     <option value="Kualar">Kualar</option>
                     <option value="Johor">Johor</option>
                     <option value="Kedah">Kedah</option>
@@ -21,11 +43,13 @@
                     <option value="Negeri Sembilan">Negeri Sembilan</option>
                     </select>  </p>
                 <p> Please Write Your Enquiry: <input type="text" id="message" rows="4" placeholder="Type your enquiries here ...." required></textarea> </p>
-                <button type="submit" >Submit</button> <input type="button"
-                value="cancel"
+                <input type="button" onclick="submitfunc()" value="Submit"/> <input type="button"
+                value="Cancel"
                 onclick="document.getElementById('message').value = '',document.getElementById('name').value = '',document.getElementById('Email').value = '' ,document.getElementById('phone').value = '',document.getElementById('location').value= '---select your location---',document.getElementById('gendermale').checked= '',document.getElementById('genderfemale').checked= ''"/> 
             </form>
-</div>
+        </div>
+        <div id="submitdiv">
+        </div>
     </body>
     </html>
     
